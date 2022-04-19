@@ -71,15 +71,15 @@ a{
 }
 
 
-.imgGiratoria{
-    width: 60%;
-    animation-name: girar; /*pongo el keyframe que quiero que haga*/
+.movimiento{
+    animation-name: mover; /*pongo el keyframe que quiero que haga*/
     animation-iteration-count: infinite; /* para que haga un loop infinito*/
-    animation-duration: 10s; /*por cuanto tiempo quiero que haga el efecto*/
+    animation-duration: 15s; /*por cuanto tiempo quiero que haga el efecto*/
+    animation-fill-mode: scale(.8);
 }
 
 .imgPortfolio img{
-    transition: .5s;
+    transition: mover .5s;
 }
 .imgPortfolio img:hover{
     transform: scale(.8);
@@ -90,11 +90,14 @@ a{
     padding-bottom: 21%;
 }
 
-@keyframes girar{
-    from{
-        transform: scale(1)
+@keyframes mover{
+    0%{
+        transform: scale(.8)
     }
-    to{
-        transform: scale(1.1)
+    50%{
+        transform: scale(.6)        
+    }
+    100%{
+        transform: scale(.8)
     }
 }
