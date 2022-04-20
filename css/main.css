@@ -15,29 +15,19 @@ body{
 }
 
 
-li{
-    border-radius: 1rem;
+li a{
+    border-radius: .5rem;
     transition: .3s;
 }
-/*
-li:hover{
-    background-color: #fdd100;
-}*/
 
-.barranav{
-    padding: 2rem;
-}
-
-.barranav li a{
-    transition: .5s;
-    border-radius: 1rem;
-}
-.elementosNav a{
-    padding: 1rem;
-}
-.elementosNav a:hover{
+li a:hover{
+    background-color: #ffd500d3;
     color: #252525;
-    background-color: #fdd100;
+}
+
+
+.bg-light{
+    background-color: none;
 }
 
 .bg-color1{
@@ -77,11 +67,17 @@ a{
     animation-duration: 15s; /*por cuanto tiempo quiero que haga el efecto*/
     animation-fill-mode: scale(.8);
 }
-
-.imgPortfolio img{
-    transition: mover .5s;
+.giratorio{
+    animation-name: girar; /*pongo el keyframe que quiero que haga*/
+    animation-iteration-count: infinite; /* para que haga un loop infinito*/
+    animation-duration: 15s; /*por cuanto tiempo quiero que haga el efecto*/
 }
-.imgPortfolio img:hover{
+
+.imgPortfolio{
+    transition: .5s;
+}
+
+.imgPortfolio:hover{
     transform: scale(.8);
 }
 
@@ -99,5 +95,31 @@ a{
     }
     100%{
         transform: scale(.8)
+    }
+}
+
+
+@keyframes girar{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)      
+    }
+}
+
+
+@media only screen and (max-width:990px){
+    h1{
+        font-size: 2rem;
+    } 
+}
+
+@media only screen and (max-width:700px){
+    h1{
+        font-size: 1.5rem;
+    } 
+    .formContacto label{
+        display: block;
     }
 }
